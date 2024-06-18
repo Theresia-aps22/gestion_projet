@@ -1,0 +1,53 @@
+
+.container-custom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f2f5;
+  }
+  
+  .card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+
+  
+  .carousel-inner {
+    height: 100%;
+  }
+  
+  .carousel-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  .carousel-indicators {
+    position: absolute;
+    bottom: 10px; /* Positionne les indicateurs en bas */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+}
+
+.carousel-indicators button {
+    background-color: #007bff; /* Couleur des indicateurs */
+}
+
+.carousel-indicators .active {
+    background-color: #0056b3; /* Couleur de l'indicateur actif */
+}
+
+  
+  .btn {
+    margin: 10px 5px;
+  }
+  
+  .form-select {
+    margin-top: 15px;
+  }
+  
