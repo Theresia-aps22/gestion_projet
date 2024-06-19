@@ -1,47 +1,28 @@
-import Bouton from "../bouton";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import Bouton from "../../components/bouton"; 
 
 export default function Project() {
     return (
-        <div className="content-wrapper">
-            <section className="content-header">
-                <div className="container-fluid">
-                    <div className="row mb-2">
-                        <div className="col-sm-6">
-                            <h1>Projects</h1>
-                        </div>
-                        <div className="col-sm-6">
-                            <Bouton
-                                title="ajouter"
-                            />
-                        </div>
-                    </div>
-                </div>
-            </section>
+        <div className="content-wrapper" >
             <section className="content">
                 <div className="card">
                     <div className="card-header">
                         <h3 className="card-title">Projects</h3>
-
                         <div className="card-tools">
-                            <button type="button" className="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                                <i className="fas fa-minus"></i>
-                            </button>
-                            <button type="button" className="btn btn-tool" data-card-widget="remove" title="Remove">
-                                <i className="fas fa-times"></i>
-                            </button>
+                            <Link to="/addProject" className="btn btn-primary custom-button">
+                                <i className="fa-solid fa-plus"></i> Create
+                            </Link>
                         </div>
                     </div>
                     <div className="card-body p-0">
                         <table className="table table-striped projects">
                             <thead>
                                 <tr>
-                                    <th style={{ width: "1%" }}>
-                                        #
-                                    </th>
                                     <th style={{ width: "20%" }}>
                                         Project Name
                                     </th>
-                                    <th style={{ width: "30%" }}>
+                                    <th style={{ width: "20%" }}>
                                         Team Members
                                     </th>
                                     <th>
@@ -50,19 +31,17 @@ export default function Project() {
                                     <th style={{ width: "8%" }} className="text-center">
                                         Status
                                     </th>
-                                    <th style={{ width: "20%" }}>
+                                    <th style={{ width: "30%"}}>
+                                      
                                     </th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td>
-                                        #
-                                    </td>
-                                    <td>
-                                        <a>
+                                        <Link to="#">
                                             AdminLTE v3
-                                        </a>
+                                        </Link>
                                         <br />
                                         <small>
                                             Created 01.01.2019
@@ -97,21 +76,15 @@ export default function Project() {
                                         <span className="badge badge-success">Success</span>
                                     </td>
                                     <td className="project-actions text-right">
-                                        <a className="btn btn-primary btn-sm" href="#">
-                                            <i className="fas fa-folder">
-                                            </i>
-                                            View
-                                        </a>
-                                        <a className="btn btn-info btn-sm" href="#">
-                                            <i className="fas fa-pencil-alt">
-                                            </i>
-                                            Edit
-                                        </a>
-                                        <a className="btn btn-danger btn-sm" href="#">
-                                            <i className="fas fa-trash">
-                                            </i>
-                                            Delete
-                                        </a>
+                                        <Link className="btn btn-primary btn-sm" to="#" style={{margin:"5px"}}>
+                                            <i className="fas fa-folder"></i> View
+                                        </Link>
+                                        <Link className="btn btn-info btn-sm" to="/editProject" style={{margin:"5px"}}>
+                                            <i className="fas fa-pencil-alt"></i> Edit
+                                        </Link>
+                                        <Link className="btn btn-danger btn-sm" to="#" style={{margin:"5px"}}>
+                                            <i className="fas fa-trash"></i> Delete
+                                        </Link>
                                     </td>
                                 </tr>
                             </tbody>

@@ -1,20 +1,27 @@
-.bouton_div{
+.bouton_div {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.btn.btn-primary.button{
-    font-size: var(--small-font-size);
-    background-color: var(--first-color);
-    border-color:  var(--first-color);
+.btn.btn-primary.custom-button {
+    font-size: 14px;
+    background-color: #007bff;
+    border-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+    transition: background-color 0.3s, border-color 0.3s;
 }
 
-.btn.btn-primary.button:hover{
-    background-color: var(--button-color);
-    border-color: var(--button-color) ;
+.btn.btn-primary.custom-button:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
 }
 
-img{
+img {
     width: 30px;
 }

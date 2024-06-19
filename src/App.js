@@ -1,25 +1,50 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import LoginBox from './pages/login';
 import RegisterBox from './pages/register';
-import ProjetForm from './pages/projetForm';
+import ProjectForm from './pages/projectForm';
 import Navbar from "./components/navbar";
 import SideNav from "./components/sideNav";
+import Project from './pages/project';
+import "./assets/css/adminlte.min.css";
+import ProjectEditForm from './pages/projectEdit';
+
 
 export default function App() {
     return (
         <BrowserRouter>
-            <div style={{ display: 'flex' }}>
-                <div style={{ flex: 1 }}>
-                    <Navbar />
-                    <SideNav />
-                </div>
-            </div>
-            <Routes>
-                <Route path="/register" element={<RegisterBox />} />
-                <Route path="/login" element={<LoginBox />} />
-                <Route path="/projet " element={<ProjetForm />} />
-            </Routes>
+            <AppContent />
         </BrowserRouter>
+    );
+}
+
+function AppContent() {
+    let location = useLocation();
+
+    const isLoginPage = location.pathname === '/login';
+    const isRegisterPage = location.pathname === '/register';
+
+    if (isLoginPage || isRegisterPage) {
+        return (
+            <Routes>
+                <Route path="/login" element={<LoginBox />} />
+                <Route path="/register" element={<RegisterBox />} />
+            </Routes>
+        );
+    }
+
+    return (
+        <div>
+            <SideNav />
+            <Navbar />
+            <div className="content" style={{ padding: '70px 10px 30px 10px' }}>
+                <Routes>
+                    <Route path="/addProject" element={<ProjectForm />} />
+                    <Route path="/project" element={<Project />} />
+                    <Route path="/editProject" element={<ProjectEditForm />} />
+                    {/* Autres routes avec Navbar et SideNav */}
+                </Routes>
+            </div>
+        </div>
     );
 }

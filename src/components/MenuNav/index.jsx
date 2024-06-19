@@ -1,26 +1,21 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-export default function MenuNav(){
-    return(
-        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-            <li class="nav-item">
-                <a href="#" class="nav-link">
-                <i class="nav-icon fas fa-tachometer-alt"></i>
-                <p>
-                    Dashboard
-                    <i class="right fas fa-angle-left"></i>
-                </p>
-                </a>
+export default function MenuNav() {
+    return (
+        <ul className="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false" style={{padding: "5px"}}>
+            <li className="nav-item">
+                <Link to="/" className="nav-link">
+                    <i className="nav-icon fas fa-tachometer-alt"></i>
+                    <p>Dashboard</p>
+                </Link>
             </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link">
-                <i class="nav-icon fas fa-tachometer-alt"></i>
-                <p>
-                    Projet
-                    <i class="right fas fa-angle-left"></i>
-                </p>
-                </a>
+            <li className="nav-item">
+                <Link to="/project" className="nav-link">
+                    <i className="fa-solid fa-folder-open"></i>
+                    <p>  Project</p>
+                </Link>
             </li>
-
         </ul>
-    )
+    );
 }

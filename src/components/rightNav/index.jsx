@@ -1,8 +1,6 @@
 import MessageDropDown from "../messageNav"
 import Notifications from "../notifications"
 import SearchNav from "../searchNav"
-import ExtendsNav from "../expends"
-import OptionNav from "../optionNav"
 
 
 
@@ -12,8 +10,6 @@ export default function RightNav(){
                 <SearchNav/>
                 <MessageDropDown/>
                 <Notifications/>
-                <ExtendsNav/>
-                <OptionNav/>
             </ul>
     )
 }
