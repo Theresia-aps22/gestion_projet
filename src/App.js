@@ -8,6 +8,7 @@ import SideNav from "./components/sideNav";
 import Project from './pages/project';
 import "./assets/css/adminlte.min.css";
 import ProjectEditForm from './pages/projectEdit';
+import ProjectView from "./pages/projectView"
 
 
 export default function App() {
@@ -42,6 +43,7 @@ function AppContent() {
                     <Route path="/addProject" element={<ProjectForm />} />
                     <Route path="/project" element={<Project />} />
                     <Route path="/editProject" element={<ProjectEditForm />} />
+                    <Route path="/viewProject" element={<ProjectView />} />
                     {/* Autres routes avec Navbar et SideNav */}
                 </Routes>
             </div>

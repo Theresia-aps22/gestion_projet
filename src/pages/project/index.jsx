@@ -76,7 +76,7 @@ export default function Project() {
                                         <span className="badge badge-success">Success</span>
                                     </td>
                                     <td className="project-actions text-right">
-                                        <Link className="btn btn-primary btn-sm" to="#" style={{margin:"5px"}}>
+                                        <Link className="btn btn-primary btn-sm" to="/viewProject" style={{margin:"5px"}}>
                                             <i className="fas fa-folder"></i> View
                                         </Link>
                                         <Link className="btn btn-info btn-sm" to="/editProject" style={{margin:"5px"}}>

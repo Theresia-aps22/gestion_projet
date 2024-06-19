@@ -49,18 +49,21 @@ const Task = () => {
                                 </ul>
                             </td>
                             <td className="task-actions text-center">
+                                <Link className="btn btn-primary btn-sm" to="#" style={{margin:"5px"}}>
+                                    <i class="fa-solid fa-eye"></i>
+                                </Link>
                                 <Link className="btn btn-info btn-sm" to="/editTask" style={{margin:"5px"}}>
-                                    <i className="fas fa-pencil-alt"></i> Edit
+                                    <i className="fas fa-pencil-alt"></i> 
                                 </Link>
                                 <Link className="btn btn-danger btn-sm" to="#" style={{margin:"5px"}}>
-                                    <i className="fas fa-trash"></i> Delete
+                                    <i className="fas fa-trash"></i> 
                                 </Link>
                                 <Link className="btn btn-success btn-sm" to="#" style={{margin:"5px"}}>
-                                    <i className="fas fa-check"></i> Validate
+                                    <i className="fas fa-check"></i>
                                 </Link>
                             </td>
                         </tr>
-                        {/* Ajouter d'autres lignes de tâches si nécessaire */}
+                        
                     </tbody>
                 </table>
             </div>
