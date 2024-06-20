@@ -1,8 +1,14 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 import Bouton from "../../components/bouton"; 
+import DialogConfirmedDelete from '../../components/dialogConfirmedDelete';
 
 export default function Project() {
+    const [showTaskDialogDelete, setShowTaskDialogDelete] = useState(false);
+
+    const handleCloseTaskDialogDelete = () => setShowTaskDialogDelete(false);
+    const handleShowTaskDialogDelete = () => setShowTaskDialogDelete(true);
+
     return (
         <div className="content-wrapper" >
             <section className="content">
@@ -82,9 +88,9 @@ export default function Project() {
                                         <Link className="btn btn-info btn-sm" to="/editProject" style={{margin:"5px"}}>
                                             <i className="fas fa-pencil-alt"></i> Edit
                                         </Link>
-                                        <Link className="btn btn-danger btn-sm" to="#" style={{margin:"5px"}}>
+                                        <button className="btn btn-danger btn-sm" to="#" style={{margin:"5px"}} onClick={handleShowTaskDialogDelete}>
                                             <i className="fas fa-trash"></i> Delete
-                                        </Link>
+                                        </button>
                                     </td>
                                 </tr>
                             </tbody>
@@ -92,6 +98,8 @@ export default function Project() {
                     </div>
                 </div>
             </section>
+            <DialogConfirmedDelete show={showTaskDialogDelete} handleClose={handleCloseTaskDialogDelete} description="Are you sure you want to delete this project?"/>
+    
         </div>
     );
 }
