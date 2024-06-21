@@ -9,6 +9,8 @@ import Project from './pages/project';
 import "./assets/css/adminlte.min.css";
 import ProjectEditForm from './pages/projectEdit';
 import ProjectView from "./pages/projectView"
+import Message from "./pages/message"
+import Test from "./pages/test"
 
 
 export default function App() {
@@ -25,11 +27,14 @@ function AppContent() {
     const isLoginPage = location.pathname === '/login';
     const isRegisterPage = location.pathname === '/register';
 
-    if (isLoginPage || isRegisterPage) {
+    const isTest = location.pathname == "/test"
+
+    if (isLoginPage || isRegisterPage || isTest) {
         return (
             <Routes>
                 <Route path="/login" element={<LoginBox />} />
                 <Route path="/register" element={<RegisterBox />} />
+                <Route path="/test" element={<Test/>} />
             </Routes>
         );
     }
@@ -44,6 +49,7 @@ function AppContent() {
                     <Route path="/project" element={<Project />} />
                     <Route path="/editProject" element={<ProjectEditForm />} />
                     <Route path="/viewProject" element={<ProjectView />} />
+                     <Route path="/message" element={<Message />} />
                     {/* Autres routes avec Navbar et SideNav */}
                 </Routes>
             </div>

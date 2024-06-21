@@ -5,9 +5,9 @@ export default function MenuNav() {
     return (
         <ul className="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false" style={{padding: "5px"}}>
             <li className="nav-item">
-                <Link to="/" className="nav-link">
+               <Link to="/" className="nav-link">
                     <i className="nav-icon fas fa-tachometer-alt"></i>
-                    <p>Dashboard</p>
+                    <p>  Dashboard</p>
                 </Link>
             </li>
             <li className="nav-item">
@@ -16,6 +16,23 @@ export default function MenuNav() {
                     <p>  Project</p>
                 </Link>
             </li>
+             <li className="nav-item">
+                <Link to="/message" className="nav-link">
+                    <i class="fa-solid fa-message"></i>
+                        <p>  Message</p>
+                </Link>
+            </li>
+            <li className="nav-item">
+            <Link to="/contact" className="nav-link">
+                <i class="fa-solid fa-circle-info"></i>
+                    <p>  Contact-us</p>
+            </Link>
+            <Link to="/contact" className="nav-link">
+                <i class="fa-solid fa-circle-info"></i>
+                    <p>  About-us</p>
+            </Link>
+
+        </li>
         </ul>
     );
 }

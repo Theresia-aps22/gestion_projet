@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from "react-router-dom"
 import Task from '../../components/task'; 
 import GeneralCard from '../../components/generalCard'; 
 import BudgetCard from '../../components/budgetCard';
@@ -18,7 +19,7 @@ export default function ProjectEditForm() {
             </div>
              <div className="row">
                 <div className="col-12 d-flex justify-content-between">
-                    <a href="/project" className="btn btn-secondary">Cancel</a>
+                    <Link to="/project" className="btn btn-secondary">Cancel</Link>
                     <input type="submit" value="Enregistrer" className="btn btn-success" />
                 </div>
             </div>
