@@ -16,5 +16,6 @@ const { auth } = require('../middlewares/auth');
 // router.post('/products', auth, ProductController.store);
 // router.put('/products/:id', auth, ProductController.update);
 // router.delete('/products/:id', auth, ProductController.delete);
+cousema
 
 module.exports = router;
