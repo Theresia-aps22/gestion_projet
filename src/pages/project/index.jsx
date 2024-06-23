@@ -1,6 +1,7 @@
-import React, {useState} from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import Bouton from "../../components/bouton"; 
+import person from "../../assets/images/personne1.jpg";
+import { Tooltip } from 'bootstrap';
 import DialogConfirmedDelete from '../../components/dialogConfirmedDelete';
 
 export default function Project() {
@@ -9,8 +10,16 @@ export default function Project() {
     const handleCloseTaskDialogDelete = () => setShowTaskDialogDelete(false);
     const handleShowTaskDialogDelete = () => setShowTaskDialogDelete(true);
 
+    useEffect(() => {
+        // Initialisation des tooltips Bootstrap
+        const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-toggle="tooltip"]'));
+        tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new Tooltip(tooltipTriggerEl);
+        });
+    }, []);
+
     return (
-        <div className="content-wrapper" >
+        <div className="content-wrapper">
             <section className="content">
                 <div className="card">
                     <div className="card-header">
@@ -37,8 +46,7 @@ export default function Project() {
                                     <th style={{ width: "8%" }} className="text-center">
                                         Status
                                     </th>
-                                    <th style={{ width: "30%"}}>
-                                      
+                                    <th style={{ width: "30%" }}>
                                     </th>
                                 </tr>
                             </thead>
@@ -56,16 +64,16 @@ export default function Project() {
                                     <td>
                                         <ul className="list-inline">
                                             <li className="list-inline-item">
-                                                <img alt="Avatar" className="table-avatar" src="../../dist/img/avatar.png" />
+                                                <img alt="Avatar" className="table-avatar" src={person} data-toggle="tooltip" title="Nom de la personne 1" />
                                             </li>
                                             <li className="list-inline-item">
-                                                <img alt="Avatar" className="table-avatar" src="../../dist/img/avatar2.png" />
+                                                <img alt="Avatar" className="table-avatar" src={person} data-toggle="tooltip" title="Nom de la personne 2" />
                                             </li>
                                             <li className="list-inline-item">
-                                                <img alt="Avatar" className="table-avatar" src="../../dist/img/avatar3.png" />
+                                                <img alt="Avatar" className="table-avatar" src={person} data-toggle="tooltip" title="Nom de la personne 3" />
                                             </li>
                                             <li className="list-inline-item">
-                                                <img alt="Avatar" className="table-avatar" src="../../dist/img/avatar4.png" />
+                                                <img alt="Avatar" className="table-avatar" src={person} data-toggle="tooltip" title="Nom de la personne 4" />
                                             </li>
                                         </ul>
                                     </td>
@@ -82,13 +90,13 @@ export default function Project() {
                                         <span className="badge badge-success">Success</span>
                                     </td>
                                     <td className="project-actions text-right">
-                                        <Link className="btn btn-primary btn-sm" to="/viewProject" style={{margin:"5px"}}>
+                                        <Link className="btn btn-primary btn-sm" to="/viewProject" style={{ margin: "5px" }}>
                                             <i className="fas fa-folder"></i> View
                                         </Link>
-                                        <Link className="btn btn-info btn-sm" to="/editProject" style={{margin:"5px"}}>
+                                        <Link className="btn btn-info btn-sm" to="/editProject" style={{ margin: "5px" }}>
                                             <i className="fas fa-pencil-alt"></i> Edit
                                         </Link>
-                                        <button className="btn btn-danger btn-sm" to="#" style={{margin:"5px"}} onClick={handleShowTaskDialogDelete}>
+                                        <button className="btn btn-danger btn-sm" to="#" style={{ margin: "5px" }} onClick={handleShowTaskDialogDelete}>
                                             <i className="fas fa-trash"></i> Delete
                                         </button>
                                     </td>
@@ -98,8 +106,7 @@ export default function Project() {
                     </div>
                 </div>
             </section>
-            <DialogConfirmedDelete show={showTaskDialogDelete} handleClose={handleCloseTaskDialogDelete} description="Are you sure you want to delete this project?"/>
-    
+            <DialogConfirmedDelete show={showTaskDialogDelete} handleClose={handleCloseTaskDialogDelete} description="Are you sure you want to delete this project?" />
         </div>
     );
 }

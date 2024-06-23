@@ -1,29 +1,31 @@
 /* nav.css */
 
-.navigation {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    overflow: hidden;
-}
-
-.navbar-fixed {
+/* Ensure the sidebar is hidden by default on smaller screens */
+.side-nav {
     position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1030; /* Plus élevé que le contenu */
-}
-
-.sidenav-fixed {
-    position: fixed;
+    width: 250px;
+    height: 100%;
     top: 0;
     left: 0;
-    height: 100%;
-    width: 200px; /* Ajustez la largeur selon vos besoins */
+    z-index: 1000;
+    background-color: #343a40;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(-100%);
 }
 
-.content {
-    padding: 20px;
-    overflow-y: auto;
-    margin-top: 0px;
+/* When the sidebar is visible, slide it into view */
+.side-nav.visible {
+    transform: translateX(0);
+}
+
+/* Ensure the navbar takes the full width of the screen */
+.navbar-fixed {
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1001;
+}
+.side-nav{
+    display: none
 }

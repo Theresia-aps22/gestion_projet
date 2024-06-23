@@ -25,14 +25,9 @@ export default function MenuNav() {
             <li className="nav-item">
             <Link to="/contact" className="nav-link">
                 <i class="fa-solid fa-circle-info"></i>
-                    <p>  Contact-us</p>
+                    <p> Log out</p>
             </Link>
-            <Link to="/contact" className="nav-link">
-                <i class="fa-solid fa-circle-info"></i>
-                    <p>  About-us</p>
-            </Link>
-
-        </li>
+            </li>
         </ul>
     );
 }

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import logo from "../../assets/images/gestion.jpg";
 import MenuNav from "../menuNav";
 
-export default function SideNav() {
+const SideNav = () => {
     return (
         <aside className="main-sidebar sidebar-dark-primary elevation-4 position-fixed">
             <Link to="/" className="brand-link">
@@ -18,7 +18,7 @@ export default function SideNav() {
             <div className="sidebar">
                 <div className="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div className="image">
-                        <img src={logo} className="img-circle elevation-2" alt="User Image"/>
+                        <img src={logo} className="img-circle elevation-2" alt="User"/>
                     </div>
                     <div className="info">
                         <a href="#" className="d-block">Alexander Pierce</a>
@@ -31,3 +31,5 @@ export default function SideNav() {
         </aside>
     );
 }
+
+export default SideNav;

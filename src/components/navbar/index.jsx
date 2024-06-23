@@ -1,14 +1,28 @@
 import React from 'react';
-import LeftNav from "../leftNav";
-import RightNav from "../rightNav";
+import MessageDropDown from "../messageNav";
+import Notifications from "../notifications";
+import SearchNav from "../searchNav";
+import {Link} from "react-router-dom"
 
-export default function Navbar({toggleSidebar}) {
+const Navbar = ({ toggleSidebar }) => {
     return (
-        <nav className="main-header navbar navbar-expand-lg navbar-light bg-light position-fixed" style={{width:'80%'}}>
+        <nav className="main-header navbar navbar-expand-lg navbar-light bg-light position-fixed"  style={{width: '80%'}}>
             <div className="container-fluid">
-                <LeftNav  toggleSidebar={toggleSidebar}/>
-                <RightNav />
+                <button className="navbar-toggler" type="button" onClick={toggleSidebar}>
+                    <span className="navbar-toggler-icon"></span>
+                </button>
+                <ul className="navbar-nav">
+                    <Link to="/" className="nav-link">
+                          Home
+                    </Link>
+                </ul>
+                <ul className="navbar-nav ml-auto" style={{display: 'flex'}}>
+                    <MessageDropDown />
+                    <Notifications />
+                </ul>
             </div>
         </nav>
     );
 }
+
+export default Navbar;

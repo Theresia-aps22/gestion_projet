@@ -10,7 +10,7 @@ import "./assets/css/adminlte.min.css";
 import ProjectEditForm from './pages/projectEdit';
 import ProjectView from "./pages/projectView"
 import Message from "./pages/message"
-import Test from "./pages/test"
+
 
 
 export default function App() {
@@ -34,7 +34,6 @@ function AppContent() {
             <Routes>
                 <Route path="/login" element={<LoginBox />} />
                 <Route path="/register" element={<RegisterBox />} />
-                <Route path="/test" element={<Test/>} />
             </Routes>
         );
     }

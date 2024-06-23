@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import { Button, Modal, Form, Image } from 'react-bootstrap';
-import MemberDropdown from '../memberDropdown'
+import MemberDropdown from '../memberDropdown';
 
-const TaskDialog = ({ show, handleClose}) => {
+const TaskDialog = ({ show, handleClose }) => {
   const [taskTitle, setTaskTitle] = useState('');
   const [assignedTo, setAssignedTo] = useState('');
   const [description, setDescription] = useState('');
   const [attachments, setAttachments] = useState(null);
-
   const [selectedPeople, setSelectedPeople] = useState([]);
 
   const handleSelectPeople = (people) => {
@@ -16,7 +15,7 @@ const TaskDialog = ({ show, handleClose}) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Logique pour gérer les données du formulaire
+    // Logic to handle form data
     console.log({
       taskTitle,
       assignedTo,
@@ -33,7 +32,7 @@ const TaskDialog = ({ show, handleClose}) => {
   return (
     <Modal show={show} onHide={handleClose}>
       <Modal.Header closeButton>
-        <Modal.Title><i class="fa-solid fa-list-check"></i>  Task</Modal.Title>
+        <Modal.Title><i className="fa-solid fa-list-check"></i> Task</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Form onSubmit={handleSubmit}>
@@ -41,28 +40,28 @@ const TaskDialog = ({ show, handleClose}) => {
             <Form.Label>Title</Form.Label>
             <Form.Control
               type="text"
-              placeholder="Entrez le titre"
+              placeholder="Enter title"
               value={taskTitle}
               onChange={(e) => setTaskTitle(e.target.value)}
             />
           </Form.Group>
 
           <Form.Group controlId="formAssignedTo">
-            <Form.Label>Concerned Person</Form.Label>
+            <Form.Label>Assigned To</Form.Label>
             <MemberDropdown onSelect={handleSelectPeople} />
             {selectedPeople.length > 0 && (
               <div className="mt-3">
-                <h3>Personnes sélectionnées:</h3>
+                <h3>Selected People:</h3>
                 <ul>
                   {selectedPeople.map((person) => (
                     <li key={person.id} className="d-flex align-items-center">
                       <Image src={person.avatar} roundedCircle width={50} height={50} className="me-2" />
                       {person.name}
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </Form.Group>
 
           <Form.Group controlId="formDescription">
@@ -70,7 +69,7 @@ const TaskDialog = ({ show, handleClose}) => {
             <Form.Control
               as="textarea"
               rows={3}
-              placeholder="Entrez la description"
+              placeholder="Enter description"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
             />
