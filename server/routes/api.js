@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const { auth } = require('../middlewares/auth');
 
-// // Importation des contrôleurs
+// Importation des contrôleurs
 // const ProductController = require("../controllers/Backend/ProductController");
 // const RegisterUserController = require("../controllers/Auth/RegisterUserController");
 // const AuthenticatedSessionController = require("../controllers/Auth/AuthenticatedSessionController");
