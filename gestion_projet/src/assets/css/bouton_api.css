@@ -1,0 +1,18 @@
+
+.btn.btn-primary.button_api{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: var(--small-font-size);
+    background-color: rgba(248, 209, 209, 0.37);
+    height: 35px;
+    color: black;
+}
+
+.btn.btn-primary.button_api:hover{
+    background-color: var(--button-color);
+}
+
+img{
+    width: 20px;
+}

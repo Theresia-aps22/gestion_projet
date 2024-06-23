@@ -1,0 +1,37 @@
+/* Input.css */
+
+.form-outline {
+    position: relative;
+    margin-bottom: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.form-control {
+    width: 100%;
+    padding: 1rem 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-label {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    transition: all 0.2s ease;
+    color: #999;
+    background-color: white;
+}
+
+.form-label.active {
+    top: -0.5rem;
+    left: 0.5rem;
+    font-size: 0.75rem;
+    color: #007bff; 
+}
+
+.form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25);
+}
